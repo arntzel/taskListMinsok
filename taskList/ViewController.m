@@ -24,6 +24,7 @@
     self.navigationItem.title = @"Task List";
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+    //Tasks class findall method returns an array of all of the saved task objects in coredata...
     _tasksArray = [Tasks findAll];
     
 
@@ -50,6 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    //returns the count of the array of tasks that you setup above
     return [_tasks count];
 }
 
@@ -66,6 +68,7 @@
     cell.textLabel.shadowColor = [UIColor blackColor];
     cell.textLabel.shadowOffset = CGSizeMake(1,1);
     cell.textLabel.textColor = [UIColor greenColor];
+    //refers to the task in our tasks array and uses the parameter indexPath.row.
     cell.textLabel.text = [_tasks objectAtIndex:indexPath.row];
     
     NSLog(@"row: %i, section: %i",indexPath.row,indexPath.section);
@@ -75,6 +78,7 @@
 
 - (IBAction)addTask:(id)sender {
     
+    //Tasks create entity creates a new Task instance
     Tasks *taskModel = [Tasks createEntity];
 
     [self.view endEditing:YES];
@@ -83,6 +87,7 @@
 
     [_tasks addObject:task];
     [_taskTableView reloadData];
+    //this method saves the created instance to core data.
     [[NSManagedObjectContext defaultContext] save];
 
 }
@@ -104,7 +109,7 @@
     if (editingStyle ==UITableViewCellEditingStyleDelete)
     {
         //logic to remove objects/rows
-        
+        //this to update and delete items from core data.
         [_tasks removeObjectAtIndex:[indexPath row]];
         [_taskTableView reloadData];
         
