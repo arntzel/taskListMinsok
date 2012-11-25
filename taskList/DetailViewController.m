@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //_selectedTask was set in the viewController.m implementation file.
     _taskName.text = _selectedTask;
 }
 
@@ -37,6 +38,7 @@
 }
 
 - (IBAction)goBackPressed:(id)sender {
+    //go back to the viewControllerView by dismissing the currentView.
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
