@@ -10,21 +10,29 @@
 
 #import "DetailViewController.h"
 
-//This is the interface or header file for the UIViewController.  The colon and UIViewController declares this class as a subclass of UIViewController.  We declare any public API as well as the delegates our class conforms to below.
+// This is the interface or header file for the UIViewController.
+// The colon and UIViewController declares this class as a subclass of UIViewController.
 @interface ViewController : UIViewController
-//In order to use the table view delegate methods we need our class to conform to the delegate.  In this case we need to conform to:
-//UITableViewDelegate: a Class containing methods used to alter or change the table view (delete rows, touch rows)
-//UITableViewDataSource: provides the table view object the information to draw the table view
-//UITextFieldDelegate: defines user input into the pop up keyboard
+/** 
+ In order to use the table view delegate methods we need our class to conform to the delegate.  
+ 
+ In this case we need to conform to:
+     UITableViewDelegate: a Class containing methods used to alter or change the table view (delete rows, touch rows)
+     UITableViewDataSource: provides the table view object the information to draw the table view
+     UITextFieldDelegate: defines user input into the pop up keyboard
+ */
 
 <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
-//This action/method will be called on the object when the user     
+// This could have been simply written as:
+// @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
+//This action/method will be called on the object when the user clicks the button it's connected to
 - (IBAction)addTask:(id)sender;
 
-//For each IBOutlet (An Identifier for the compiler so that it can properly link the view with property
-//For all properties we give them a type of class (
-//The naming convention for properties makes it easy to recognize what type the property is.
+// For each IBOutlet (An Identifier for the compiler so that it can properly link the view with property)
+// For all properties we give them a type of class
+// The naming convention for properties makes it easy to recognize what type the property is.
 @property (weak, nonatomic) IBOutlet UITextField *addTaskTextField;
 @property (weak, nonatomic) IBOutlet UITableView *taskTableView;
 

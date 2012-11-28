@@ -6,17 +6,18 @@
 //  Copyright (c) 2012 Eliot Arntz. All rights reserved.
 //
 
-//Import (include) the interfact file for ViewController
+//Import (include) the interface file for ViewController
 #import "ViewController.h"
-//Import (include) the interfact file for Tasks.  As a result when we create an array of tasks objects we will be able to catch that object in a variable of the same class.
+
+//Import (include) the interface file for Tasks.  As a result when we create an array of tasks objects we will be able to catch that object in a variable of the same class.
 #import "Tasks.h"
 
-//Private API
+//Private Methods
 @interface ViewController ()
 
 @end
 
-//definition for methods defined in our interface (header file).
+// Definition for methods defined in our interface (header file).
 @implementation ViewController
 
 //Method called after the view controller has loaded its view hierarchy into memory. This method is called regardless of whether the view hierarchy was loaded from a nib file or created programmatically in the loadView method
