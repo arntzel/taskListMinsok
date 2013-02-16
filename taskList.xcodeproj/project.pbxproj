@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4292A0216CFDE66006F7107 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4292A0116CFDE66006F7107 /* View.xib */; };
 		C4EA76E81632F79F006F576A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EA76E71632F79F006F576A /* UIKit.framework */; };
 		C4EA76EA1632F79F006F576A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EA76E91632F79F006F576A /* Foundation.framework */; };
 		C4EA76EC1632F79F006F576A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EA76EB1632F79F006F576A /* CoreGraphics.framework */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4292A0116CFDE66006F7107 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		C4EA76E31632F79F006F576A /* taskList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EA76E71632F79F006F576A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C4EA76E91632F79F006F576A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +148,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C42929FF16CFDE45006F7107 /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4292A0116CFDE66006F7107 /* View.xib */,
+			);
+			name = customCell;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		C4EA76D81632F79F006F576A = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +192,7 @@
 				C4EA76F71632F79F006F576A /* AppDelegate.m */,
 				C4EA7B5F163C4975006F576A /* ViewControllers */,
 				C4EA7B5E163C496A006F576A /* Model */,
+				C42929FF16CFDE45006F7107 /* customCell */,
 				C4EA76EE1632F79F006F576A /* Supporting Files */,
 			);
 			path = taskList;
@@ -384,6 +396,7 @@
 				C4EA76FE1632F79F006F576A /* Default-568h@2x.png in Resources */,
 				C4EA77041632F79F006F576A /* ViewController.xib in Resources */,
 				C4EA771E163304CD006F576A /* DetailViewController.xib in Resources */,
+				C4292A0216CFDE66006F7107 /* View.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,4 +45,9 @@
 //tasks
 @property (strong, nonatomic) NSArray *tasksArray;
 
+//to be used later
+//@property (strong, nonatomic) IBOutlet UITableViewCell *tableViewCell;
+//@property (strong, nonatomic) IBOutlet UILabel *label1;
+//@property (strong, nonatomic) IBOutlet UILabel *label2;
+
 @end

@@ -61,6 +61,7 @@
     return [_tasks count];
 }
 
+#pragma mark - Test Pragma
 //setup the tableView's cells.
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -122,7 +123,6 @@
 //implement this method to allow users to tap on rows
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     //After the user touches the row, deselect the row
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
@@ -135,26 +135,33 @@
     [self presentViewController:_detailVC animated:YES completion:nil];
 }
 
-@end
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle ==UITableViewCellEditingStyleDelete)
+    {
+        //logic to remove objects/rows
+        //this to update and delete items from core data.
+        Tasks *task = [_tasks objectAtIndex:indexPath.row];
+        [task deleteEntity];
+        [[NSManagedObjectContext defaultContext] save];
 
+        [_tasks removeObjectAtIndex:indexPath.row];
+        
+        //[[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
+        
+        [_taskTableView reloadData];
+    }
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [self.taskTableView setEditing:editing animated:YES];
+}
+
+@end
 //ignore these for now we will discuss them next time we meet.
 
-//- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    if (editingStyle ==UITableViewCellEditingStyleDelete)
-//    {
-//        //logic to remove objects/rows
-//        //this to update and delete items from core data.
-//        [_tasks removeObjectAtIndex:[indexPath row]];
-//        [_taskTableView reloadData];
-//        [[NSManagedObjectContext defaultContext] save];
-//
-//    }
-//}
 
-//- (void)setEditing:(BOOL)editing animated:(BOOL)animated
-//{
-//    [super setEditing:editing animated:animated];
-//    [self.taskTableView setEditing:editing animated:YES];
-//}
+
 
